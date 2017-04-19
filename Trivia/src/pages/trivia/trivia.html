@@ -18,13 +18,15 @@
 <ion-content padding>
 
 <div *ngFor="let item of items|async">
-  
+  <div *ngIf="preguntaActual==item.id">
 
   <ion-input type="text" name="nombre" value={{item.pregunta}} [readonly]=true> </ion-input>
   
-    <button ion-button block>{{item.opciones.res1}}</button>
-    <button ion-button block>{{item.opciones.res2}}</button>
-    <button ion-button block>{{item.opciones.res3}}</button>  
+    <button ion-button block (click)="Respuesta('res1',item.$key)">{{item.opciones.res1}}</button>
+    <button ion-button block (click)="Respuesta('res2',item.$key)">{{item.opciones.res2}}</button>
+    <button ion-button block (click)="Respuesta('res3',item.$key)">{{item.opciones.res3}}</button>  
+
+    </div>
     
 
 </div>    
