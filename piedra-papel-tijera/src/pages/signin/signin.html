@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>    
+    <ion-title>Sing In</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+    <ion-input type="text" [(ngModel)]="persona.nombre" name="nombre" placeholder="Ingrese Nombre" required></ion-input>
+    <ion-input type="text" [(ngModel)]="persona.email" name="email" placeholder="Ingrese Email" required></ion-input>
+    <ion-input type="password" [(ngModel)]="persona.password" name="password" placeholder="Ingrese Password" required></ion-input>
+    <button ion-button block type="button" (click)="registrar(persona)">Registrarse</button> 
+    <button ion-button block type="button" (click)="cancelar()">Cancelar</button>
+</ion-content>
