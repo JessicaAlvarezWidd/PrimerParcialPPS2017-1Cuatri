@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController,ViewController } from 'ionic-angular';
+import { NavController,ViewController, ModalController } from 'ionic-angular';
 import { AngularFire } from 'angularfire2';
-import { Trivia } from '../trivia/trivia'
+import { Trivia } from '../trivia/trivia';
+import { SignInPage } from '../signin/signin';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginPage {
   
   user = {}; 
 
-  constructor(public navCtrl: NavController,public af: AngularFire,public view:ViewController) {
+  constructor(public navCtrl: NavController, public af: AngularFire, public view:ViewController, public modalContr:ModalController) {
 
   }   
   
@@ -20,8 +21,9 @@ export class LoginPage {
       this.af.auth.login({ email: datos.MailIngresado, password: datos.ClaveIngresa }).then(
       (result) => {
           // all good, lets move on
+          this.navCtrl.setRoot(Trivia);
           console.log(result);
-          //this.navCtrl.push(Trivia);
+
       },
       (err) => {
           // something didn't work
@@ -30,6 +32,12 @@ export class LoginPage {
       }
     );    
   } 
+
+  singIn()
+  {
+    let reForm = this.modalContr.create(SignInPage)
+    reForm.present();
+  }
 
 
 }

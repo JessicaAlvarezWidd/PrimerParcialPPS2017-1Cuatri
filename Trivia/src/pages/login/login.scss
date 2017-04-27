@@ -1,3 +1,74 @@
-page-home {
+page-login {
+
+    /*input[type=text] {
+    border: none;
+    border-bottom: 2px solid slategrey;*/
+
+   /*input[type=text] {
+    border: 2px solid red;
+    border-radius: 4px;*/
+
+    input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    border: 2px solid palevioletred;
+    border-radius: 4px;
+    color: white;
+    }
+
+    input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    border: 2px solid palevioletred;
+    border-radius: 4px;
+    color: white;
+    }
+
+    button[type=submit] {
+    background-color: steelblue;
+    border: none;
+    color: beige;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+
+    button[type=button] {
+    background-color: mediumpurple;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+
+    /*div {
+    background: url(https://blog.game.es/wp-content/uploads/2017/01/Sephiroth-Cloud-final-fantasy-vii-29026371-1920-1200.png) no-repeat center fixed; 
+    background-size: cover;
+    }*/
+
+    /*body {
+    background-image: url(https://blog.game.es/wp-content/uploads/2017/01/Sephiroth-Cloud-final-fantasy-vii-29026371-1920-1200.png);
+    background-repeat: no-repeat;
+}*/
+
+    ion-content {
+    //background-image: url(http://orig08.deviantart.net/33b4/f/2011/216/7/3/final_fantasy_x_logo_by_eldi13-d4204zv.png);
+    //background-image: url(http://orig11.deviantart.net/8339/f/2011/256/a/7/dissidia_final_fantasy_logo_by_eldi13-d49pmjd.png);
+    //background-image: url(http://ngn-mag.com/image/wallpaper/fond-ecran-final-fantasy-68.png);
+    background-image: url(https://i.ytimg.com/vi/vRtwvmvcn3g/maxresdefault.jpg);
+    //background-image: url(http://fdzeta.com/data/MetaMirrorCache/_48f7_i_2013_342_2_5_final_fantasy_wallpaper_by_artema2011_d6x8pk3.jpg);
+    background-repeat: no-repeat;
+    //background-repeat: repeat-x;
+    //background-position: right top;
+    background-attachment: fixed;
+    background-size: cover;
+    }
 
 }

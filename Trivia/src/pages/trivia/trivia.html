@@ -17,14 +17,18 @@
 
 <ion-content padding>
 
+<div text-right>
+  Bienvenid@ {{userLogin.auth.displayName}}
+</div>
+
 <div *ngFor="let item of items|async">
   <div *ngIf="preguntaActual==item.id">
 
-  <ion-input type="text" name="nombre" value={{item.pregunta}} [readonly]=true> </ion-input>
+    <ion-input type="text" name="nombre" value={{item.pregunta}} [readonly]=true style="font-size:15px;"> </ion-input>
   
-    <button ion-button block (click)="Respuesta('res1',item.$key)">{{item.opciones.res1}}</button>
-    <button ion-button block (click)="Respuesta('res2',item.$key)">{{item.opciones.res2}}</button>
-    <button ion-button block (click)="Respuesta('res3',item.$key)">{{item.opciones.res3}}</button>  
+    <button ion-button block type="button" (click)="Respuesta('res1',item.$key,item.pregunta)">{{item.opciones.res1}}</button>
+    <button ion-button block type="button" (click)="Respuesta('res2',item.$key,item.pregunta)">{{item.opciones.res2}}</button>
+    <button ion-button block type="button" (click)="Respuesta('res3',item.$key,item.pregunta)">{{item.opciones.res3}}</button>  
 
     </div>
     

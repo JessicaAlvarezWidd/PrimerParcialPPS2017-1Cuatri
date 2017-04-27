@@ -2,11 +2,14 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AngularFire } from 'angularfire2';
 
 import { LoginPage } from '../pages/login/login';
-import { LogoutPage } from '../pages/logout/logout';
+import { SignInPage } from '../pages/signin/signin';
 import { About } from '../pages/about/about';
-import {Trivia } from '../pages/trivia/trivia';
+import { Trivia } from '../pages/trivia/trivia';
+import { Result } from '../pages/result/result';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -14,18 +17,18 @@ import {Trivia } from '../pages/trivia/trivia';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Trivia;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public af:AngularFire) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Login', component: LoginPage },
-      { title: 'Trivia', component: Trivia }, 
-      { title: 'Logout', component: LogoutPage },
+    this.pages = [     
+      { title: 'Trivia', component: Trivia },
+      { title: 'Resultados', component: Result }, 
+      { title: 'Logout', component: LoginPage },
       { title: 'About', component: About }
     
       
@@ -45,6 +48,10 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
+    if(page.title == "Logout")
+    {
+      this.af.auth.logout();
+    }        
     this.nav.setRoot(page.component);
   }
 }

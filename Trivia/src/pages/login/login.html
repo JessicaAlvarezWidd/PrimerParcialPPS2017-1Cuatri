@@ -1,17 +1,19 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
+    <!--<button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
-    </button>
+    </button>-->
     <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <form (ngSubmit)="Login(user)">   
-    <ion-input type="text" [(ngModel)]="user.MailIngresado" name="nombre" placeholder="Ingrese Nombre" required></ion-input>
-    <ion-input type="password" [(ngModel)]="user.ClaveIngresa" name="clave" placeholder="Ingrese Clase" required></ion-input>
+    <ion-input type="text" [(ngModel)]="user.MailIngresado" name="nombre" placeholder="Ingrese Email" required></ion-input>
+    <ion-input type="password" [(ngModel)]="user.ClaveIngresa" name="clave" placeholder="Ingrese Password" required></ion-input>
     <button ion-button block type="submit">Login</button>
   </form>
-  
+  <button ion-button block type="button" (click)="singIn()">Sing In</button>
+
 </ion-content>
+

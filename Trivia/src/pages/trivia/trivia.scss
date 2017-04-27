@@ -1,3 +1,54 @@
 page-trivia {
 
+    input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    //border: 2px solid palevioletred;
+    //border-radius: 4px;
+    color: white;
+    text-align: center;
+    }
+
+    button[type=button] {
+    background-color: teal;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+
+    ion-content {
+    //background-image: url(http://mygaming.co.za/news/wp-content/uploads/2015/06/Final-Fantasy-VII-Remake-Cloud-vs.-Sephiroth.jpg);
+    //background-image: url(http://i.imgur.com/l2X7dNK.jpg);
+    //background-image: url(http://cdn.wallpapersafari.com/27/95/0HqIgA.jpg);
+    background-image: url(https://www.walldevil.com/wallpapers/a88/final-fantasy-wallpaper-games-video-walls.jpg);
+    background-repeat: no-repeat;
+    //background-repeat: repeat-x;
+    //background-position: right top;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+
+    div {
+    color: white;
+}
+
+/*.clase-toast-fallo {
+  > div{
+       background-color:red!important;
+       border-radius: 12px;
+   }
+}
+
+.clase-toast-acierto {
+  > div{
+       background-color:#32db64!important;
+       border-radius: 12px;
+   }
+}*/
+
 }

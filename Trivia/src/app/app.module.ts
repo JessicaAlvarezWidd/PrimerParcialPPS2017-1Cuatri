@@ -2,15 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
-import { LogoutPage } from '../pages/logout/logout';
+import { SignInPage } from '../pages/signin/signin';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { About } from '../pages/about/about';
 import { Trivia } from '../pages/trivia/trivia';
+import { Result } from '../pages/result/result';
 
 const myFirebaseConfig = {
     apiKey: "AIzaSyCyGVM1-cKIC_mpxB6qMgQt_qvfBoYbIKc",
@@ -32,22 +34,25 @@ const myFirebaseAuthConfig = {
   declarations: [
     MyApp,
     LoginPage,
-    LogoutPage,
+    SignInPage,
     About,
-    Trivia
+    Trivia,
+    Result
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(myFirebaseConfig,myFirebaseAuthConfig) 
+    AngularFireModule.initializeApp(myFirebaseConfig,myFirebaseAuthConfig),
+    Ng2SmartTableModule 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     LoginPage,
-    LogoutPage,
+    SignInPage,
     About,
-    Trivia
+    Trivia,
+    Result
   ],
   providers: [
     StatusBar,

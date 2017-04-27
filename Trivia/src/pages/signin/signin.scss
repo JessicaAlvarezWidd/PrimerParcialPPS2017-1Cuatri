@@ -1,0 +1,46 @@
+page-signin {
+
+    input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    border: 2px solid lightslategrey;
+    border-radius: 4px;
+    color: white;
+    }
+
+    input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    border: 2px solid lightslategray;
+    border-radius: 4px;
+    color: white;
+    }
+
+    button[type=button] {
+    background-color: darkcyan; 
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+
+    ion-content {    
+    //background-image: url(http://sm2.imgs.sapo.pt/mb/E/D/G/D/erMDw5IxOj3GMDiC5yYd5j4_.jpg);
+    //background-image: url(http://clubgamerzone.com/wp-content/uploads/2016/11/Final-Fantasy-15-Wallpapers-HD.jpg);
+    //background-image: url(http://img.loquenosabias.com/tops10/2013/07/11/los-10-mejores-personajes-de.jpg);
+    background-image: url(http://www.ffmages.com/ffx/images/wallpapers/ffx-yuna-and-tidus-wallpaper-1280x1024.jpg);
+    
+    background-repeat: no-repeat;
+    //background-repeat: repeat-x;
+    //background-position: right top;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+
+}
