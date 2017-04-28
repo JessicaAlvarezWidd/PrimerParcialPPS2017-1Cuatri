@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,ViewController, ModalController } from 'ionic-angular';
 import { AngularFire } from 'angularfire2';
-import { Trivia } from '../trivia/trivia';
+import { Ppt } from '../ppt/ppt';
 import { SignInPage } from '../signin/signin';
 
 
@@ -21,7 +21,7 @@ export class LoginPage {
       this.af.auth.login({ email: datos.MailIngresado, password: datos.ClaveIngresa }).then(
       (result) => {
           // all good, lets move on
-          this.navCtrl.setRoot(Trivia);
+          this.navCtrl.setRoot(Ppt);
           console.log(result);
 
       },

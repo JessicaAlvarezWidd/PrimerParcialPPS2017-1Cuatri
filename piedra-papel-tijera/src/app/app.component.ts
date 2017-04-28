@@ -7,7 +7,7 @@ import { AngularFire } from 'angularfire2';
 import { LoginPage } from '../pages/login/login';
 import { SignInPage } from '../pages/signin/signin';
 import { About } from '../pages/about/about';
-import { Trivia } from '../pages/trivia/trivia';
+import { Ppt } from '../pages/ppt/ppt';
 import { Result } from '../pages/result/result';
 
 
@@ -26,7 +26,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [     
-      { title: 'Trivia', component: Trivia },
+      { title: 'Lets Play!', component: Ppt },
       { title: 'Resultados', component: Result }, 
       { title: 'Logout', component: LoginPage },
       { title: 'About', component: About }
