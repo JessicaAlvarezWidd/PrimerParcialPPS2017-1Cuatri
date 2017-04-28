@@ -1,3 +1,52 @@
-page-home {
+page-login {
+
+    input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    border: 2px solid orangered;
+    border-radius: 4px;
+    color: white;
+    }
+
+    input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    border: 2px solid orangered;
+    border-radius: 4px;
+    color: white;
+    }
+
+    button[type=submit] {
+    background-color: maroon;
+    border: none;
+    color: beige;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+
+    button[type=button] {
+    background-color: darkgoldenrod;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+
+    ion-content {
+    background-image: url(https://i.stack.imgur.com/gDxRP.png);    
+    background-repeat: no-repeat;
+    //background-repeat: repeat-x;
+    //background-position: right top;
+    background-attachment: fixed;
+    background-size: cover;
+    }
 
 }
