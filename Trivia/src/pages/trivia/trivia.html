@@ -24,7 +24,7 @@
 <div *ngFor="let item of items|async">
   <div *ngIf="preguntaActual==item.id">
 
-    <ion-input type="text" name="nombre" value={{item.pregunta}} [readonly]=true style="font-size:15px;"> </ion-input>
+    <ion-input type="text" name="nombre" value={{item.pregunta}} [readonly]=true > </ion-input>
   
     <button ion-button block type="button" (click)="Respuesta('res1',item.$key,item.pregunta)">{{item.opciones.res1}}</button>
     <button ion-button block type="button" (click)="Respuesta('res2',item.$key,item.pregunta)">{{item.opciones.res2}}</button>

@@ -30,15 +30,15 @@ export class Result {
 
   this.juegos.subscribe(juego => {juego.forEach(item => {
         
-    if(item.estado == "Ganado"){
+    if(item.estado == "Ganado" && item.nombre == this.userLogin.auth.displayName){
       this.Ganados.push(item);
       
     }
-    if(item.estado == "Empatado"){
+    if(item.estado == "Empatado" && item.nombre == this.userLogin.auth.displayName){
       this.Empatados.push(item);
       
     }
-    if(item.estado == "Perdido"){
+    if(item.estado == "Perdido" && item.nombre == this.userLogin.auth.displayName){
       this.Perdidos.push(item);
         
     }

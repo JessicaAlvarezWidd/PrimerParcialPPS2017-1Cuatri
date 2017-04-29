@@ -85,7 +85,7 @@ export class Trivia {
                 //alert('ACERTASTE');
                 toast = this.toastCtrl.create({
                   message: 'ACERTASTE',
-                  duration: 1000,
+                  duration: 500,
                   position: 'middle',
                   cssClass: 'clase-toast-acierto'
                 }); 
@@ -97,7 +97,7 @@ export class Trivia {
                 //alert('ERRASTE');
                 toast = this.toastCtrl.create({
                   message: 'FALLASTE',
-                  duration: 1000,
+                  duration: 500,
                   position: 'middle',
                   cssClass: 'clase-toast-fallo'
                 });  

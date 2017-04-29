@@ -4,11 +4,13 @@ page-trivia {
     width: 100%;
     padding: 12px 20px;
     margin: 12px 0;
-    box-sizing: border-box;
+    //box-sizing: border-box;
     //border: 2px solid palevioletred;
     //border-radius: 4px;
     color: white;
-    text-align: center;
+    //text-align: center;
+    font-size: larger;
+    font-weight: bold
     }
 
     button[type=button] {
@@ -37,7 +39,9 @@ page-trivia {
     color: white;
 }
 
-/*.clase-toast-fallo {
+}
+
+.clase-toast-fallo {
   > div{
        background-color:red!important;
        border-radius: 12px;
@@ -46,9 +50,7 @@ page-trivia {
 
 .clase-toast-acierto {
   > div{
-       background-color:#32db64!important;
+       background-color:green!important;
        border-radius: 12px;
    }
-}*/
-
 }

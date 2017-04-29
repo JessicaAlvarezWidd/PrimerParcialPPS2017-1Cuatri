@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 /**
@@ -20,7 +20,7 @@ export class Ppt {
   juegos : FirebaseListObservable<any>;
   resultado : String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFire, public toastCtrl: ToastController) {
   
     af.auth.subscribe(auth => this.userLogin =  auth); 
     console.log(this.userLogin.auth.displayName);
@@ -35,11 +35,18 @@ export class Ppt {
 
    botonPrecionado(botonPrecionado) 
   {   
-    
+    let toast;
     var numRandom = Math.floor(Math.random()*3)+1;   
 
     if(botonPrecionado == numRandom)
     {
+      toast = this.toastCtrl.create({
+              message: 'EMPATASTE',
+              duration: 800,
+              position: 'middle',
+              cssClass: 'clase-toast-empate'
+                }); 
+      toast.present();
       this.resultado = "Empatado";
     }
     else
@@ -49,9 +56,22 @@ export class Ppt {
         case 1: 
           if(numRandom == 2) 
           {
+            toast = this.toastCtrl.create({
+                  message: 'PERDISTE',
+                  duration: 800,
+                  position: 'middle',
+                  cssClass: 'clase-toast-perdido'
+                });
             this.resultado = "Perdido";
           }
-          else{
+          else
+          {
+            toast = this.toastCtrl.create({
+                  message: 'GANASTE!',
+                  duration: 800,
+                  position: 'middle',
+                  cssClass: 'clase-toast-ganado'
+                });
             this.resultado = "Ganado";
           }
           break;
@@ -59,25 +79,53 @@ export class Ppt {
         case 2: 
           if(numRandom == 3) 
           {
+            toast = this.toastCtrl.create({
+                  message: 'PERDISTE',
+                  duration: 800,
+                  position: 'middle',
+                  cssClass: 'clase-toast-perdido'
+                });
             this.resultado = "Perdido";
           }
-          else{
+          else
+          {
+            toast = this.toastCtrl.create({
+                  message: 'GANASTE!',
+                  duration: 800,
+                  position: 'middle',
+                  cssClass: 'clase-toast-ganado'
+                });
             this.resultado = "Ganado";
           }
           break;
     
           
           case 3: 
-              if(numRandom == 1) 
+            if(numRandom == 1) 
           {
+            toast = this.toastCtrl.create({
+                  message: 'PERDISTE',
+                  duration: 800,
+                  position: 'middle',
+                  cssClass: 'clase-toast-perdido'
+                });
             this.resultado = "Perdido";
           }
-          else{
+          else
+          {
+            toast = this.toastCtrl.create({
+                  message: 'GANASTE!',
+                  duration: 800,
+                  position: 'middle',
+                  cssClass: 'clase-toast-ganado'
+                });
             this.resultado = "Ganado";
           }
           break;          
           
       }
+
+      toast.present();
       
     }
     console.log(this.resultado);

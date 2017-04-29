@@ -20,7 +20,7 @@
 
   <div *ngIf="seleccion=='Ganados'">
     <div *ngFor="let ganado of Ganados; let i=index">
-      <div *ngIf="i<5">      
+      <div *ngIf="i<10">      
         <ion-card>      
           <ion-card-header>
             {{ganado.nombre}}
@@ -36,7 +36,7 @@
 
   <div *ngIf="seleccion=='Empatados'">    
     <div *ngFor="let empatado of Empatados; let i=index">
-      <div *ngIf="i<5">      
+      <div *ngIf="i<10">      
         <ion-card>      
           <ion-card-header>
             {{empatado.nombre}}
@@ -52,7 +52,7 @@
 
   <div *ngIf="seleccion=='Perdidos'">   
     <div *ngFor="let perdido of Perdidos; let i=index">
-      <div *ngIf="i<5">      
+      <div *ngIf="i<10">      
         <ion-card>      
           <ion-card-header>
             {{perdido.nombre}}
