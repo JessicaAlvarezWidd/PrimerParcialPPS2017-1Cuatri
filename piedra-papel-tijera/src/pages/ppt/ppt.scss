@@ -8,13 +8,33 @@ page-ppt {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 8px;
+    }
+
+    #lala {
+     position: relative;
+     top: 0px;
+     left: 6px;
+    }
+
+    #lala1 {
+     position: relative;
+     top: 180px;
+     //left: 15px;
+     right: 15px;
+    }
+
+    #lala2 {
+     position: relative;
+     top: 250px;
+     left: 200px;
     }
 
     ion-content {
     //background-image: url(http://mygaming.co.za/news/wp-content/uploads/2015/06/Final-Fantasy-VII-Remake-Cloud-vs.-Sephiroth.jpg);
     //background-image: url(http://i.imgur.com/l2X7dNK.jpg);
-    //background-image: url(http://cdn.wallpapersafari.com/27/95/0HqIgA.jpg);
-    background-image: url(https://s-media-cache-ak0.pinimg.com/236x/9a/9b/4d/9a9b4d23ab645617d014d72136d09eba.jpg);
+    background-image: url(https://s-media-cache-ak0.pinimg.com/736x/d0/fc/a9/d0fca91562ce0802d6453be8585888f2.jpg);
+    //background-image: url(https://s-media-cache-ak0.pinimg.com/236x/9a/9b/4d/9a9b4d23ab645617d014d72136d09eba.jpg);
     background-repeat: no-repeat;
     //background-repeat: repeat-x;
     //background-position: right top;

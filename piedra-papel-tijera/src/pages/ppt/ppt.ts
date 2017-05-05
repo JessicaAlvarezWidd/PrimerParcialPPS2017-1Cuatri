@@ -42,7 +42,7 @@ export class Ppt {
     {
       toast = this.toastCtrl.create({
               message: 'EMPATASTE',
-              duration: 800,
+              duration: 700,
               position: 'middle',
               cssClass: 'clase-toast-empate'
                 }); 
@@ -58,7 +58,7 @@ export class Ppt {
           {
             toast = this.toastCtrl.create({
                   message: 'PERDISTE',
-                  duration: 800,
+                  duration: 700,
                   position: 'middle',
                   cssClass: 'clase-toast-perdido'
                 });
@@ -68,7 +68,7 @@ export class Ppt {
           {
             toast = this.toastCtrl.create({
                   message: 'GANASTE!',
-                  duration: 800,
+                  duration: 700,
                   position: 'middle',
                   cssClass: 'clase-toast-ganado'
                 });
@@ -81,7 +81,7 @@ export class Ppt {
           {
             toast = this.toastCtrl.create({
                   message: 'PERDISTE',
-                  duration: 800,
+                  duration: 700,
                   position: 'middle',
                   cssClass: 'clase-toast-perdido'
                 });
@@ -91,7 +91,7 @@ export class Ppt {
           {
             toast = this.toastCtrl.create({
                   message: 'GANASTE!',
-                  duration: 800,
+                  duration: 700,
                   position: 'middle',
                   cssClass: 'clase-toast-ganado'
                 });
@@ -105,7 +105,7 @@ export class Ppt {
           {
             toast = this.toastCtrl.create({
                   message: 'PERDISTE',
-                  duration: 800,
+                  duration: 700,
                   position: 'middle',
                   cssClass: 'clase-toast-perdido'
                 });
@@ -115,7 +115,7 @@ export class Ppt {
           {
             toast = this.toastCtrl.create({
                   message: 'GANASTE!',
-                  duration: 800,
+                  duration: 700,
                   position: 'middle',
                   cssClass: 'clase-toast-ganado'
                 });
