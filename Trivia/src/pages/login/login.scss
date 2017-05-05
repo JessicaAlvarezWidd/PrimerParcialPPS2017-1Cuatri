@@ -9,25 +9,25 @@ page-login {
     border-radius: 4px;*/
 
     input[type=text] {
-    width: 100%;
+    //width: 100%;
     padding: 12px 20px;
     margin: 12px 0;
     box-sizing: border-box;
     border: 2px solid palevioletred;
-    border-radius: 4px;
-    color: white;
+    border-radius: 15px;
+    color: ghostwhite;
     font-size: 200%;
     font-weight: bold
     }
 
     input[type=password] {
-    width: 100%;
+    //width: 100%;
     padding: 12px 20px;
     margin: 12px 0;
     box-sizing: border-box;
     border: 2px solid palevioletred;
-    border-radius: 4px;
-    color: white;
+    border-radius: 15px;
+    color: ghostwhite;
     font-size: 200%;
     font-weight: bold
     }
@@ -40,6 +40,7 @@ page-login {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 15px;
     }
 
     button[type=button] {
@@ -50,6 +51,7 @@ page-login {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 15px;
     }
 
     /*div {
