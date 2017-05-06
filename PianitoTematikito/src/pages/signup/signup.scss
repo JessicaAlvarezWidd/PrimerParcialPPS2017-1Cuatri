@@ -1,0 +1,27 @@
+page-signup {
+
+    ion-content {
+    //background-image: url(http://orig08.deviantart.net/33b4/f/2011/216/7/3/final_fantasy_x_logo_by_eldi13-d4204zv.png);
+    //background-image: url(http://orig11.deviantart.net/8339/f/2011/256/a/7/dissidia_final_fantasy_logo_by_eldi13-d49pmjd.png);
+    //background-image: url(http://ngn-mag.com/image/wallpaper/fond-ecran-final-fantasy-68.png);
+    background-image: url(http://informacionimagenes.net/wp-content/uploads/2016/02/Fondos-whatsapp-wallpapers-69.jpg);
+    //background-image: url(http://fdzeta.com/data/MetaMirrorCache/_48f7_i_2013_342_2_5_final_fantasy_wallpaper_by_artema2011_d6x8pk3.jpg);
+    background-repeat: no-repeat;
+    //background-repeat: repeat-x;
+    //background-position: right top;
+    background-attachment: fixed;
+    background-size: cover;
+    }  
+
+    button[type=button] {
+    background-color: purple;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+    }
+
+}
