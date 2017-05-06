@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { Result } from '../result/result';
+import { Vibration } from '@ionic-native/vibration';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 /**
  * Generated class for the Trivia page.
@@ -13,6 +15,7 @@ import { Result } from '../result/result';
 @Component({
   selector: 'page-trivia',
   templateUrl: 'trivia.html',
+  providers: [ Vibration, NativeAudio ]
 })
 export class Trivia {
 
@@ -27,12 +30,17 @@ export class Trivia {
   userLogin;
   preguntas: Array<any> = [];
   respuestas: Array<any> = [];
+  exitoCargarSonidoCorrecto : boolean = false;
+  exitoCargarSonidoError : boolean = false;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire, public alertCtrl: AlertController, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire, 
+  public alertCtrl: AlertController, public toastCtrl: ToastController, public vibration : Vibration, public native : NativeAudio) {
 
     af.auth.subscribe(auth => this.userLogin =  auth);
-    console.log(this.userLogin.auth.displayName); 
+    console.log(this.userLogin.auth.displayName);
+
+    this.CargarSonidos(); 
     
     this.items = af.database.list('/Trivia');
     //console.log(this.items);
@@ -82,6 +90,8 @@ export class Trivia {
             
               if(ResSelect == item.respuesta)
               {
+                this.ReproducirSonido("correcto");
+                this.vibration.vibrate(550);
                 //alert('ACERTASTE');
                 toast = this.toastCtrl.create({
                   message: 'ACERTASTE',
@@ -94,6 +104,8 @@ export class Trivia {
               }
               else
               {
+                this.ReproducirSonido("error");
+                this.vibration.vibrate([200,300,200]);
                 //alert('ERRASTE');
                 toast = this.toastCtrl.create({
                   message: 'FALLASTE',
@@ -112,7 +124,8 @@ export class Trivia {
       
       if(this.preguntasRespondidas.length > 4)
       {
-        this.finalRound()
+        this.EliminarSonidos();
+        this.finalRound();
       }
       else
       {
@@ -131,7 +144,8 @@ export class Trivia {
   }
 
   finalRound()
-  {
+  {     
+          
         let alert = this.alertCtrl.create({
           title: 'Felicidades!',
           subTitle: 'Terminaste esta Ronda. Gracias por jugar!',
@@ -148,7 +162,7 @@ export class Trivia {
           this.cntIncorrecta += item.resIncorrectas;
         }
       }
-    ));
+    ));    
 
     this.ResUser.update(this.userLogin.auth.uid,
     { 
@@ -181,7 +195,52 @@ export class Trivia {
     );
 
   this.navCtrl.setRoot(Result);
+}
+
+ CargarSonidos()
+  {
+    this.native.preloadSimple('correcto', 'assets/sound/Correcto.wav')
+      .then(
+        resp => {
+          this.exitoCargarSonidoCorrecto = true;
+          console.log("Exito al cargar sonido 'correcto'. " + resp);
+        },
+        err => { console.log("Error al cargar el sonido 'correcto'. " + err); });
+
+    this.native.preloadSimple('error', 'assets/sound/Error.wav')
+      .then(
+        resp => {
+          this.exitoCargarSonidoError = true;
+          console.log("Exito al cargar sonido 'error'. " + resp);
+        },
+        err => { console.log("Error al cargar el sonido 'error'. " + err); });
+    
   }
+
+  ReproducirSonido(sonido)
+  {
+    if (!(this.exitoCargarSonidoCorrecto && this.exitoCargarSonidoError))
+    {
+      console.log("No se pudo reproducir el sonido por que no se cargo. ");
+      return;
+    }
+    this.native.play(sonido, () => console.log(sonido + " se termino de reproducir."))
+      .then(
+        resp => {
+          console.log("Exito al reproducir el sonido. " + resp);
+        },
+        err => { console.log("Error al reproducir el sonido. " + err); });
+  }
+
+   EliminarSonidos()
+  {
+    if (this.exitoCargarSonidoCorrecto)
+      this.native.unload("correcto");
+    if (this.exitoCargarSonidoError)
+      this.native.unload("error");
+    
+  }
+
 
 
 
