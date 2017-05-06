@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import { Vibration } from '@ionic-native/vibration';
 
 /**
  * Generated class for the Ppt page.
@@ -12,6 +13,7 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 @Component({
   selector: 'page-ppt',
   templateUrl: 'ppt.html',
+  providers: [ Vibration ]
 })
 export class Ppt {
 
@@ -20,7 +22,8 @@ export class Ppt {
   juegos : FirebaseListObservable<any>;
   resultado : String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFire, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFire, 
+  public toastCtrl: ToastController, public vibration : Vibration) {
   
     af.auth.subscribe(auth => this.userLogin =  auth); 
     console.log(this.userLogin.auth.displayName);
@@ -40,6 +43,7 @@ export class Ppt {
 
     if(botonPrecionado == numRandom)
     {
+      this.vibration.vibrate(550);
       toast = this.toastCtrl.create({
               message: 'EMPATASTE',
               duration: 700,
@@ -56,6 +60,7 @@ export class Ppt {
         case 1: 
           if(numRandom == 2) 
           {
+            this.vibration.vibrate(550);
             toast = this.toastCtrl.create({
                   message: 'PERDISTE',
                   duration: 700,
@@ -66,6 +71,7 @@ export class Ppt {
           }
           else
           {
+            this.vibration.vibrate(550);
             toast = this.toastCtrl.create({
                   message: 'GANASTE!',
                   duration: 700,
@@ -79,6 +85,7 @@ export class Ppt {
         case 2: 
           if(numRandom == 3) 
           {
+            this.vibration.vibrate(550);
             toast = this.toastCtrl.create({
                   message: 'PERDISTE',
                   duration: 700,
@@ -89,6 +96,7 @@ export class Ppt {
           }
           else
           {
+            this.vibration.vibrate(550);
             toast = this.toastCtrl.create({
                   message: 'GANASTE!',
                   duration: 700,
@@ -103,6 +111,7 @@ export class Ppt {
           case 3: 
             if(numRandom == 1) 
           {
+            this.vibration.vibrate(550);
             toast = this.toastCtrl.create({
                   message: 'PERDISTE',
                   duration: 700,
@@ -113,6 +122,7 @@ export class Ppt {
           }
           else
           {
+            this.vibration.vibrate(550);
             toast = this.toastCtrl.create({
                   message: 'GANASTE!',
                   duration: 700,
